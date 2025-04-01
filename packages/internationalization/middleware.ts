@@ -11,13 +11,50 @@ const I18nMiddleware = createI18nMiddleware({
   defaultLocale: 'en',
   urlMappingStrategy: 'rewriteDefault',
   resolveLocaleFromRequest: (request: NextRequest) => {
-    const headers = Object.fromEntries(request.headers.entries());
-    const negotiator = new Negotiator({ headers });
-    const acceptedLanguages = negotiator.languages();
+    try {
+      const headers = Object.fromEntries(request.headers.entries());
+      const negotiator = new Negotiator({ headers });
 
-    const matchedLocale = matchLocale(acceptedLanguages, locales, 'en');
+      // Handle potential errors with language negotiation
+      let acceptedLanguages: string[] = [];
+      try {
+        acceptedLanguages = negotiator.languages();
+      } catch (error) {
+        console.error('Error determining accepted languages:', error);
+        return 'en'; // Default to English on error
+      }
 
-    return matchedLocale;
+      // Filter out any invalid locale values before matching
+      const validAcceptedLanguages = acceptedLanguages.filter((lang) => {
+        try {
+          // This will throw for invalid locale strings
+          Intl.getCanonicalLocales(lang);
+          return true;
+        } catch {
+          return false;
+        }
+      });
+
+      if (validAcceptedLanguages.length === 0) {
+        return 'en'; // Default to English if no valid languages
+      }
+
+      // Try to match the locale, with fallback to default
+      try {
+        const matchedLocale = matchLocale(
+          validAcceptedLanguages,
+          locales,
+          'en'
+        );
+        return matchedLocale;
+      } catch (error) {
+        console.error('Error matching locale:', error);
+        return 'en'; // Default to English on error
+      }
+    } catch (error) {
+      console.error('Unexpected error in locale resolution:', error);
+      return 'en'; // Default to English on any error
+    }
   },
 });
 

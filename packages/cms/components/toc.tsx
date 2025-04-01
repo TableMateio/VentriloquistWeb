@@ -1,40 +1,52 @@
-import { RichText } from 'basehub/react-rich-text';
-import type { ComponentProps } from 'react';
+import type * as React from 'react';
 
-type TableOfContentsProperties = Omit<
-  ComponentProps<typeof RichText>,
-  'children'
-> & {
-  readonly data: ComponentProps<typeof RichText>['children'];
-};
+interface TableOfContentsProps {
+  data?: {
+    json?: {
+      toc?: TocItem[];
+    };
+  };
+  className?: string;
+}
 
-export const TableOfContents = ({
+interface TocItem {
+  id: string;
+  text: string;
+  level: number;
+  items?: TocItem[];
+}
+
+export const TableOfContents: React.FC<TableOfContentsProps> = ({
   data,
-  ...props
-}: TableOfContentsProperties) => (
-  <div>
-    <RichText
-      // @ts-expect-error "idk"
-      components={{
-        ol: ({ children }) => (
-          <ol className="flex list-none flex-col gap-2 text-sm">{children}</ol>
-        ),
-        ul: ({ children }) => (
-          <ul className="flex list-none flex-col gap-2 text-sm">{children}</ul>
-        ),
-        li: ({ children }) => <li className="pl-3">{children}</li>,
-        a: ({ children, href }) => (
-          <a
-            className="line-clamp-3 flex rounded-sm text-foreground text-sm underline decoration-foreground/0 transition-colors hover:decoration-foreground/50"
-            href={`#${href?.split('#').at(1)}`}
-          >
-            {children}
-          </a>
-        ),
-      }}
-      {...props}
-    >
-      {data}
-    </RichText>
-  </div>
-);
+  className,
+}) => {
+  if (!data?.json?.toc) {
+    return null;
+  }
+
+  const toc = Array.isArray(data.json.toc) ? data.json.toc : [];
+
+  const renderTocItem = (item: TocItem) => (
+    <li key={item.id} className="pl-3">
+      <a
+        className="line-clamp-3 flex rounded-sm text-foreground text-sm underline decoration-foreground/0 transition-colors hover:decoration-foreground/50"
+        href={`#${item.id}`}
+      >
+        {item.text}
+      </a>
+      {item.items && item.items.length > 0 && (
+        <ol className="flex list-none flex-col gap-2 text-sm">
+          {item.items.map(renderTocItem)}
+        </ol>
+      )}
+    </li>
+  );
+
+  return (
+    <div className={className}>
+      <ol className="flex list-none flex-col gap-2 text-sm">
+        {toc.map(renderTocItem)}
+      </ol>
+    </div>
+  );
+};
