@@ -1,4 +1,8 @@
 {
+  "buildCommand": "cd ../.. && pnpm install --no-frozen-lockfile && cd apps/api && pnpm build",
+  "outputDirectory": ".next",
+  "installCommand": "cd ../.. && pnpm install --no-frozen-lockfile",
+  "framework": "nextjs",
   "crons": [
     {
       "path": "/cron/keep-alive",
