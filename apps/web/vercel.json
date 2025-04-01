@@ -1,3 +1,6 @@
 {
-  "crons": []
+  "buildCommand": "cd ../.. && pnpm install && cd apps/web && pnpm build",
+  "outputDirectory": ".next",
+  "installCommand": "cd ../.. && pnpm install",
+  "framework": "nextjs"
 }
