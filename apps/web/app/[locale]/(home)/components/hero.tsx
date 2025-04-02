@@ -25,7 +25,7 @@ export const Hero = async ({ dictionary }: HeroProps) => {
             <div className="flex flex-row items-center gap-4">
               <div className="rounded-full bg-white/10 p-3">
                 <Image
-                  src="/ventriloquist-logo.svg"
+                  src="/assets/ventriloquist-logo.svg"
                   alt="Ventriloquist"
                   width={48}
                   height={48}
@@ -113,7 +113,7 @@ export const Hero = async ({ dictionary }: HeroProps) => {
                 <div className="flex items-center justify-center p-8">
                   <div className="rounded-full bg-[#2E8B57]/40 p-8">
                     <Image
-                      src="/ventriloquist-logo.svg"
+                      src="/assets/ventriloquist-logo.svg"
                       alt="Ventriloquist"
                       width={140}
                       height={140}
