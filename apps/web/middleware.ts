@@ -17,7 +17,22 @@ import {
 export const config = {
   // matcher tells Next.js which routes to run the middleware on. This runs the
   // middleware on all routes except for static assets and Posthog ingest
-  matcher: ['/((?!_next/static|_next/image|ingest|favicon.ico).*)'],
+  matcher: [
+    '/((?!_next/static|_next/image|assets|public|ingest|favicon.ico|.*\\.svg).*)',
+  ],
+};
+
+// Function to check if a request is for a static asset
+const isStaticAsset = (request: NextRequest) => {
+  const url = request.nextUrl.pathname;
+  return (
+    url.includes('.svg') ||
+    url.includes('.png') ||
+    url.includes('.jpg') ||
+    url.includes('.jpeg') ||
+    url.includes('/assets/') ||
+    url.startsWith('/public/')
+  );
 };
 
 const securityHeaders = env.FLAGS_SECRET
@@ -25,6 +40,11 @@ const securityHeaders = env.FLAGS_SECRET
   : noseconeMiddleware(noseconeOptions);
 
 const middleware = authMiddleware(async (_auth, request) => {
+  // Skip internationalization for static assets
+  if (isStaticAsset(request as unknown as NextRequest)) {
+    return securityHeaders();
+  }
+
   const i18nResponse = internationalizationMiddleware(
     request as unknown as NextRequest
   );

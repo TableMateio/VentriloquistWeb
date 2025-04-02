@@ -1,22 +1,31 @@
 import { BoxIcon, HeadphonesIcon, ShieldCheckIcon } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export const Footer = () => (
-  <footer className="w-full bg-gradient-to-br from-[#2E8B57] to-[#1F5C3D]">
+  <footer className="w-full bg-gradient-to-br from-[#2E8B57] via-[#267349] to-[#1F5C3D]">
     <div className="container mx-auto px-6 py-16 sm:px-8 lg:px-12">
       <div className="flex flex-col gap-12">
         <div className="flex flex-col items-start justify-between gap-12 md:flex-row">
           <div className="flex flex-col gap-7">
             <div className="flex items-center gap-3">
-              <Image
-                src="/assets/ventriloquist-logo.svg"
-                alt="Ventriloquist Logo"
-                width={40}
-                height={40}
-                className="rounded-full"
-                unoptimized
-              />
+              <div className="flex h-10 w-10 items-center justify-center rounded-full">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-label="Ventriloquist Logo"
+                >
+                  <circle cx="12" cy="12" r="12" fill="white" />
+                  <path
+                    d="M7 9V15M17 9V15M12 5.5V18.5M7.5 18.5H16.5"
+                    stroke="#2E8B57"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
               <span className="font-bold text-xl tracking-wide">
                 VENTRILOQUIST
               </span>

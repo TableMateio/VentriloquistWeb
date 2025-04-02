@@ -8,7 +8,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import type { Dictionary } from '@repo/internationalization';
-import Image from 'next/image';
 
 type HeaderProps = {
   dictionary: Dictionary;
@@ -30,18 +29,28 @@ export const Header = ({ dictionary }: HeaderProps) => {
 
   const [isOpen, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 left-0 z-40 w-full bg-gradient-to-r from-[#2E8B57] to-[#1F5C3D] shadow-md">
+    <header className="sticky top-0 left-0 z-40 w-full bg-gradient-to-r from-[#2E8B57] via-[#267349] to-[#1F5C3D] shadow-md">
       <div className="container mx-auto flex min-h-20 flex-row items-center justify-between px-6 py-5 sm:px-8 lg:px-12">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <Image
-            src="/assets/ventriloquist-logo.svg"
-            alt="Ventriloquist Logo"
-            width={40}
-            height={40}
-            className="rounded-full"
-            unoptimized
-          />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Ventriloquist Logo"
+            >
+              <circle cx="12" cy="12" r="12" fill="white" />
+              <path
+                d="M7 9V15M17 9V15M12 5.5V18.5M7.5 18.5H16.5"
+                stroke="#2E8B57"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
           <span className="whitespace-nowrap font-bold text-xl tracking-wide">
             VENTRILOQUIST
           </span>
@@ -62,10 +71,13 @@ export const Header = ({ dictionary }: HeaderProps) => {
           </nav>
 
           <Button
-            className="rounded-full bg-white px-8 py-6 font-medium text-[#2E8B57] text-base hover:bg-white/90"
+            className="relative overflow-hidden rounded-full bg-white px-8 py-3 font-semibold text-[#2E8B57] text-base shadow-lg transition-all hover:bg-white/90 hover:shadow-xl"
             asChild
           >
-            <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>Sign Up</Link>
+            <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>
+              <span className="relative z-10">Sign Up</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-white to-white/80 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+            </Link>
           </Button>
         </div>
 
@@ -80,7 +92,7 @@ export const Header = ({ dictionary }: HeaderProps) => {
           </Button>
 
           {isOpen && (
-            <div className="absolute top-20 right-0 left-0 flex w-full flex-col gap-6 border-white/10 border-t bg-gradient-to-r from-[#2E8B57] to-[#1F5C3D] p-8 shadow-lg">
+            <div className="absolute top-20 right-0 left-0 flex w-full flex-col gap-6 border-white/10 border-t bg-gradient-to-r from-[#2E8B57] via-[#267349] to-[#1F5C3D] p-8 shadow-lg">
               {navigationItems.map((item) => (
                 <div key={item.title}>
                   <Link
@@ -100,7 +112,7 @@ export const Header = ({ dictionary }: HeaderProps) => {
               ))}
               <div className="mt-6 border-white/10 border-t pt-6">
                 <Button
-                  className="w-full rounded-full bg-white py-5 font-medium text-[#2E8B57] hover:bg-white/90"
+                  className="w-full rounded-full bg-white py-4 font-semibold text-[#2E8B57] text-base shadow-md hover:bg-white/90 hover:shadow-lg"
                   asChild
                 >
                   <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>

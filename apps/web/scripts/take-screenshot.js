@@ -54,11 +54,22 @@ async function captureScreenshot() {
       });
       console.log('✅ Connected to localhost:3002');
     } catch (secondError) {
-      console.error(
-        '❌ Failed to connect to both localhost:3001 and localhost:3002'
+      console.log(
+        '⚠️ Could not connect to localhost:3002, trying localhost:3003...'
       );
-      await browser.close();
-      process.exit(1);
+      try {
+        await page.goto('http://localhost:3003', {
+          waitUntil: 'networkidle',
+          timeout: 10000,
+        });
+        console.log('✅ Connected to localhost:3003');
+      } catch (thirdError) {
+        console.error(
+          '❌ Failed to connect to localhost:3001, localhost:3002, and localhost:3003'
+        );
+        await browser.close();
+        process.exit(1);
+      }
     }
   }
 
