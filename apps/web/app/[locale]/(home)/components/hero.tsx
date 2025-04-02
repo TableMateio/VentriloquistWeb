@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { TestBanner } from './test-banner';
 
 type HeroProps = {
   dictionary: Dictionary;
@@ -19,13 +20,17 @@ export const Hero = async ({ dictionary }: HeroProps) => {
   return (
     <div className="w-full bg-gradient-to-br from-[#2E8B57] to-[#1F5C3D]">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+        <TestBanner />
+        <div className="mb-4 bg-red-600 p-4 text-center font-bold text-white text-xl">
+          THIS IS A TEST BANNER TO VERIFY CHANGES - SHOWING NOW
+        </div>
         <div className="flex flex-col items-center gap-20 py-24 md:flex-row lg:py-28">
           {/* Left Side - Text Content */}
           <div className="flex flex-col gap-12 md:w-1/2">
             <div className="flex flex-row items-center gap-4">
               <div className="rounded-full bg-white/10 p-3">
                 <Image
-                  src="/_next/static/media/ventriloquist-logo-white.svg"
+                  src="/ventriloquist-logo.svg"
                   alt="Ventriloquist"
                   width={48}
                   height={48}
@@ -35,13 +40,15 @@ export const Hero = async ({ dictionary }: HeroProps) => {
                 />
               </div>
               <h2 className="font-bold text-3xl text-white tracking-wider">
-                VENTRILOQUIST
+                VENTRILOQUISTasdfasdf
               </h2>
             </div>
 
             <div className="flex flex-col gap-8">
               <h1 className="font-bold text-6xl text-white leading-[1.15] tracking-tight">
-                <span className="block">Create deep web crawling</span>
+                <span className="block bg-purple-800 p-2">
+                  Create deep web crawling
+                </span>
                 <span className="mt-2 block">
                   jobs with <span className="text-emerald-300">N8N</span>
                 </span>
@@ -51,7 +58,7 @@ export const Hero = async ({ dictionary }: HeroProps) => {
               <p className="max-w-xl text-white/90 text-xl leading-relaxed">
                 Quickly create deep web crawling and scraping jobs within n8n
                 and see live results in Bright Data via the secure Puppeteer
-                library
+                library asdfasdfads
               </p>
             </div>
 

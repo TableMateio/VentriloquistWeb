@@ -11,10 +11,10 @@ export const Footer = () => (
             <div className="flex items-center gap-3">
               <div className="rounded-full bg-white/10 p-2">
                 <Image
-                  src="/_next/static/media/ventriloquist-logo-white.svg"
+                  src="/ventriloquist-logo.svg"
                   alt="Ventriloquist Logo"
-                  width={32}
-                  height={32}
+                  width={40}
+                  height={40}
                   className="rounded-full"
                   unoptimized
                   priority
@@ -25,8 +25,9 @@ export const Footer = () => (
               </span>
             </div>
             <p className="max-w-md text-lg text-white/80 leading-relaxed">
-              Quickly create deep web crawling and scraping jobs within n8n and
-              see live results in Bright Data via the secure Puppeteer library
+              Create powerful web automation workflows for data extraction and
+              browser testing. Integrate seamlessly with n8n and Bright Data for
+              enterprise-grade performance.
             </p>
           </div>
 
@@ -52,6 +53,12 @@ export const Footer = () => (
                 >
                   Documentation
                 </Link>
+                <Link
+                  href="/api"
+                  className="text-white/80 transition-colors hover:text-white"
+                >
+                  API Reference
+                </Link>
               </div>
             </div>
 
@@ -75,6 +82,12 @@ export const Footer = () => (
                   className="text-white/80 transition-colors hover:text-white"
                 >
                   Contact
+                </Link>
+                <Link
+                  href="/careers"
+                  className="text-white/80 transition-colors hover:text-white"
+                >
+                  Careers
                 </Link>
               </div>
             </div>
@@ -100,6 +113,12 @@ export const Footer = () => (
                 >
                   Cookie Policy
                 </Link>
+                <Link
+                  href="/security"
+                  className="text-white/80 transition-colors hover:text-white"
+                >
+                  Security
+                </Link>
               </div>
             </div>
           </div>
@@ -115,13 +134,13 @@ export const Footer = () => (
               <div className="rounded-full bg-emerald-400/20 p-2">
                 <HeadphonesIcon className="h-5 w-5 text-emerald-300" />
               </div>
-              <span className="text-white/80">Customer support</span>
+              <span className="text-white/80">24/7 Customer support</span>
             </div>
             <div className="flex flex-row items-center gap-3">
               <div className="rounded-full bg-emerald-400/20 p-2">
                 <ShieldCheckIcon className="h-5 w-5 text-emerald-300" />
               </div>
-              <span className="text-white/80">Secure Puppeteer library</span>
+              <span className="text-white/80">Enterprise-grade security</span>
             </div>
             <div className="flex flex-row items-center gap-3">
               <div className="rounded-full bg-emerald-400/20 p-2">
