@@ -27,11 +27,11 @@ const RootLayout = async ({ children, params }: RootLayoutProperties) => {
       className={cn(fonts, 'scroll-smooth')}
       suppressHydrationWarning
     >
-      <body>
+      <body className="bg-gradient-to-br from-[#2E8B57] to-[#1F5C3D] text-white">
         <AuthProvider>
           <DesignSystemProvider>
             <Header dictionary={dictionary} />
-            {children}
+            <main>{children}</main>
             <Footer />
           </DesignSystemProvider>
           <Toolbar />

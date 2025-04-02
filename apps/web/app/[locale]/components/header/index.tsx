@@ -30,8 +30,8 @@ export const Header = ({ dictionary }: HeaderProps) => {
 
   const [isOpen, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 left-0 z-40 w-full bg-[#2E8B57]">
-      <div className="container mx-auto flex min-h-20 flex-row items-center justify-between px-4 py-4">
+    <header className="sticky top-0 left-0 z-40 w-full bg-gradient-to-r from-[#2E8B57] to-[#1F5C3D] shadow-md">
+      <div className="container mx-auto flex min-h-20 flex-row items-center justify-between px-6 py-5 sm:px-8 lg:px-12">
         {/* Logo */}
         <div className="flex items-center gap-3">
           <Image
@@ -49,7 +49,7 @@ export const Header = ({ dictionary }: HeaderProps) => {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center md:flex">
-          <nav className="mr-8 flex gap-12">
+          <nav className="mr-10 flex gap-14">
             {navigationItems.map((item) => (
               <Link
                 key={item.title}
@@ -62,7 +62,7 @@ export const Header = ({ dictionary }: HeaderProps) => {
           </nav>
 
           <Button
-            className="rounded-full bg-white px-6 py-2 font-medium text-[#2E8B57] text-base hover:bg-white/90"
+            className="rounded-full bg-white px-8 py-6 font-medium text-[#2E8B57] text-base hover:bg-white/90"
             asChild
           >
             <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>Sign Up</Link>
@@ -74,13 +74,13 @@ export const Header = ({ dictionary }: HeaderProps) => {
           <Button
             variant="ghost"
             onClick={() => setOpen(!isOpen)}
-            className="p-1"
+            className="p-2"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
 
           {isOpen && (
-            <div className="absolute top-20 right-0 left-0 flex w-full flex-col gap-6 border-white/10 border-t bg-[#2E8B57] p-6 shadow-lg">
+            <div className="absolute top-20 right-0 left-0 flex w-full flex-col gap-6 border-white/10 border-t bg-gradient-to-r from-[#2E8B57] to-[#1F5C3D] p-8 shadow-lg">
               {navigationItems.map((item) => (
                 <div key={item.title}>
                   <Link
@@ -98,9 +98,9 @@ export const Header = ({ dictionary }: HeaderProps) => {
                   </Link>
                 </div>
               ))}
-              <div className="mt-4 border-white/10 border-t pt-4">
+              <div className="mt-6 border-white/10 border-t pt-6">
                 <Button
-                  className="w-full bg-white font-medium text-[#2E8B57] hover:bg-white/90"
+                  className="w-full rounded-full bg-white py-5 font-medium text-[#2E8B57] hover:bg-white/90"
                   asChild
                 >
                   <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>
