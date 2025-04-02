@@ -1,118 +1,98 @@
-import { env } from '@/env';
-import { legal } from '@repo/cms';
-import { Feed } from '@repo/cms/components/feed';
-import { Status } from '@repo/observability/status';
+import { HeadphonesIcon, ShieldCheckIcon } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const Footer = () => (
-  <Feed queries={[legal.postsQuery]}>
-    {async ([data]) => {
-      'use server';
+  <footer className="w-full border-white/10 border-t py-16">
+    <div className="container mx-auto">
+      <div className="flex flex-col gap-12">
+        <div className="flex flex-row items-start justify-between">
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/ventriloquist-logo.svg"
+                alt="Ventriloquist Logo"
+                width={40}
+                height={40}
+                className="rounded-full"
+                unoptimized
+              />
+              <span className="font-bold text-xl">VENTRILOQUIST</span>
+            </div>
+            <p className="max-w-md text-white/70">
+              Quickly create deep web crawling and scraping jobs within n8n and
+              see live results in Bright Data via the secure Puppeteer library
+            </p>
+          </div>
 
-      const navigationItems = [
-        {
-          title: 'Home',
-          href: '/',
-          description: '',
-        },
-        {
-          title: 'Pages',
-          description: 'Managing a small business today is already tough.',
-          items: [
-            {
-              title: 'Blog',
-              href: '/blog',
-            },
-          ],
-        },
-        {
-          title: 'Legal',
-          description: 'We stay on top of the latest legal requirements.',
-          items: data.legalPages.items.map((post) => ({
-            title: post._title,
-            href: `/legal/${post._slug}`,
-          })),
-        },
-      ];
+          <div className="grid grid-cols-2 gap-x-12 gap-y-6">
+            <div className="flex flex-col gap-4">
+              <h3 className="font-semibold text-lg">Product</h3>
+              <div className="flex flex-col gap-2">
+                <Link
+                  href="/features"
+                  className="text-white/70 transition-colors hover:text-white"
+                >
+                  Features
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="text-white/70 transition-colors hover:text-white"
+                >
+                  Pricing
+                </Link>
+                <Link
+                  href="/docs"
+                  className="text-white/70 transition-colors hover:text-white"
+                >
+                  Documentation
+                </Link>
+              </div>
+            </div>
 
-      if (env.NEXT_PUBLIC_DOCS_URL) {
-        navigationItems.at(1)?.items?.push({
-          title: 'Docs',
-          href: env.NEXT_PUBLIC_DOCS_URL,
-        });
-      }
-
-      return (
-        <section className="dark border-foreground/10 border-t">
-          <div className="w-full bg-background py-20 text-foreground lg:py-40">
-            <div className="container mx-auto">
-              <div className="grid items-center gap-10 lg:grid-cols-2">
-                <div className="flex flex-col items-start gap-8">
-                  <div className="flex flex-col gap-2">
-                    <h2 className="max-w-xl text-left font-regular text-3xl tracking-tighter md:text-5xl">
-                      next-forge
-                    </h2>
-                    <p className="max-w-lg text-left text-foreground/75 text-lg leading-relaxed tracking-tight">
-                      This is the start of something new.
-                    </p>
-                  </div>
-                  <Status />
-                </div>
-                <div className="grid items-start gap-10 lg:grid-cols-3">
-                  {navigationItems.map((item) => (
-                    <div
-                      key={item.title}
-                      className="flex flex-col items-start gap-1 text-base"
-                    >
-                      <div className="flex flex-col gap-2">
-                        {item.href ? (
-                          <Link
-                            href={item.href}
-                            className="flex items-center justify-between"
-                            target={
-                              item.href.includes('http') ? '_blank' : undefined
-                            }
-                            rel={
-                              item.href.includes('http')
-                                ? 'noopener noreferrer'
-                                : undefined
-                            }
-                          >
-                            <span className="text-xl">{item.title}</span>
-                          </Link>
-                        ) : (
-                          <p className="text-xl">{item.title}</p>
-                        )}
-                        {item.items?.map((subItem) => (
-                          <Link
-                            key={subItem.title}
-                            href={subItem.href}
-                            className="flex items-center justify-between"
-                            target={
-                              subItem.href.includes('http')
-                                ? '_blank'
-                                : undefined
-                            }
-                            rel={
-                              subItem.href.includes('http')
-                                ? 'noopener noreferrer'
-                                : undefined
-                            }
-                          >
-                            <span className="text-foreground/75">
-                              {subItem.title}
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            <div className="flex flex-col gap-4">
+              <h3 className="font-semibold text-lg">Company</h3>
+              <div className="flex flex-col gap-2">
+                <Link
+                  href="/about"
+                  className="text-white/70 transition-colors hover:text-white"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/blog"
+                  className="text-white/70 transition-colors hover:text-white"
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-white/70 transition-colors hover:text-white"
+                >
+                  Contact
+                </Link>
               </div>
             </div>
           </div>
-        </section>
-      );
-    }}
-  </Feed>
+        </div>
+
+        <div className="flex flex-col items-center justify-between border-white/10 border-t pt-8 md:flex-row">
+          <p className="text-sm text-white/50">
+            © {new Date().getFullYear()} Ventriloquist. All rights reserved.
+          </p>
+
+          <div className="mt-6 flex flex-row gap-8 md:mt-0">
+            <div className="flex flex-row items-center gap-3">
+              <HeadphonesIcon className="h-5 w-5 text-white/70" />
+              <span className="text-sm text-white/70">Customer support</span>
+            </div>
+            <div className="flex flex-row items-center gap-3">
+              <ShieldCheckIcon className="h-5 w-5 text-white/70" />
+              <span className="text-sm text-white/70">Secure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 );
