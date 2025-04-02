@@ -27,7 +27,7 @@ export const Hero = async ({ dictionary }: HeroProps) => {
             <div className="flex flex-row items-center gap-4">
               <div className="rounded-full bg-white/10 p-3">
                 <Image
-                  src="/assets/ventriloquist-logo.svg"
+                  src="/_next/static/media/ventriloquist-logo.svg"
                   alt="Ventriloquist"
                   width={48}
                   height={48}

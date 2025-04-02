@@ -41,7 +41,7 @@ export const Header = ({ dictionary }: HeaderProps) => {
         <div className="flex items-center gap-3">
           <div className="rounded-full bg-white/10 p-2">
             <Image
-              src="/assets/ventriloquist-logo.svg"
+              src="/_next/static/media/ventriloquist-logo.svg"
               alt="Ventriloquist Logo"
               width={32}
               height={32}
