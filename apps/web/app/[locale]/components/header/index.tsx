@@ -41,15 +41,16 @@ export const Header = ({ dictionary }: HeaderProps) => {
         <div className="flex items-center gap-3">
           <div className="rounded-full bg-white/10 p-2">
             <Image
-              src="/_next/static/media/ventriloquist-logo.svg"
+              src="/_next/static/media/ventriloquist-logo-white.svg"
               alt="Ventriloquist Logo"
               width={32}
               height={32}
               className="rounded-full"
               unoptimized
+              priority
             />
           </div>
-          <span className="font-semibold text-xl tracking-wide">
+          <span className="font-semibold text-white text-xl tracking-wide">
             Ventriloquist
           </span>
         </div>
@@ -110,7 +111,9 @@ export const Header = ({ dictionary }: HeaderProps) => {
                         : undefined
                     }
                   >
-                    <span className="font-medium text-lg">{item.title}</span>
+                    <span className="font-medium text-lg text-white">
+                      {item.title}
+                    </span>
                     <MoveRight className="h-4 w-4 stroke-1 text-white/70" />
                   </Link>
                 </div>

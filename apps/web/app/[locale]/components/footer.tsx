@@ -11,15 +11,16 @@ export const Footer = () => (
             <div className="flex items-center gap-3">
               <div className="rounded-full bg-white/10 p-2">
                 <Image
-                  src="/_next/static/media/ventriloquist-logo.svg"
+                  src="/_next/static/media/ventriloquist-logo-white.svg"
                   alt="Ventriloquist Logo"
                   width={32}
                   height={32}
                   className="rounded-full"
                   unoptimized
+                  priority
                 />
               </div>
-              <span className="font-semibold text-xl tracking-wide">
+              <span className="font-semibold text-white text-xl tracking-wide">
                 Ventriloquist
               </span>
             </div>
@@ -31,7 +32,7 @@ export const Footer = () => (
 
           <div className="grid grid-cols-1 gap-x-24 gap-y-12 md:grid-cols-3">
             <div className="flex flex-col gap-6">
-              <h3 className="font-semibold text-xl">Product</h3>
+              <h3 className="font-semibold text-white text-xl">Product</h3>
               <div className="flex flex-col gap-4">
                 <Link
                   href="/features"
@@ -55,7 +56,7 @@ export const Footer = () => (
             </div>
 
             <div className="flex flex-col gap-6">
-              <h3 className="font-semibold text-xl">Company</h3>
+              <h3 className="font-semibold text-white text-xl">Company</h3>
               <div className="flex flex-col gap-4">
                 <Link
                   href="/about"
@@ -79,7 +80,7 @@ export const Footer = () => (
             </div>
 
             <div className="flex flex-col gap-6">
-              <h3 className="font-semibold text-xl">Legal</h3>
+              <h3 className="font-semibold text-white text-xl">Legal</h3>
               <div className="flex flex-col gap-4">
                 <Link
                   href="/privacy"
