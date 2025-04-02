@@ -22,7 +22,12 @@ export const Header = ({ dictionary }: HeaderProps) => {
       description: '',
     },
     {
-      title: 'Docs',
+      title: 'Pricing',
+      href: '/pricing',
+      description: '',
+    },
+    {
+      title: 'Documentation',
       href: '/docs',
       description: '',
     },
@@ -41,7 +46,7 @@ export const Header = ({ dictionary }: HeaderProps) => {
         <div className="flex items-center gap-3">
           <div className="rounded-full bg-white/10 p-2">
             <Image
-              src="/ventriloquist-logo.svg"
+              src="/assets/ventriloquist-logo.svg"
               alt="Ventriloquist Logo"
               width={40}
               height={40}
@@ -82,7 +87,9 @@ export const Header = ({ dictionary }: HeaderProps) => {
               className="rounded-full bg-white px-6 font-medium text-[#2E8B57] hover:bg-white/90"
               asChild
             >
-              <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>Sign Up</Link>
+              <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>
+                Get Started
+              </Link>
             </Button>
           </div>
         </div>
@@ -134,7 +141,7 @@ export const Header = ({ dictionary }: HeaderProps) => {
                   asChild
                 >
                   <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>
-                    Sign Up
+                    Get Started
                   </Link>
                 </Button>
               </div>

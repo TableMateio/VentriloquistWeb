@@ -8,7 +8,6 @@ import {
   MoveRight,
   ShieldCheckIcon,
 } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 type HeroProps = {
@@ -22,35 +21,19 @@ export const Hero = async ({ dictionary }: HeroProps) => {
         <div className="flex flex-col items-center gap-20 py-24 md:flex-row lg:py-28">
           {/* Left Side - Text Content */}
           <div className="flex flex-col gap-12 md:w-1/2">
-            <div className="flex flex-row items-center gap-4">
-              <div className="rounded-full bg-white/10 p-3">
-                <Image
-                  src="/ventriloquist-logo.svg"
-                  alt="Ventriloquist"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                  unoptimized
-                  priority
-                />
-              </div>
-              <h2 className="font-bold text-3xl text-white tracking-wider">
-                VENTRILOQUIST
-              </h2>
-            </div>
-
             <div className="flex flex-col gap-8">
               <h1 className="font-bold text-6xl text-white leading-[1.15] tracking-tight">
-                <span className="block">Create deep web crawling</span>
+                <span className="block">Create deep web</span>
+                <span className="mt-2 block">crawling jobs with</span>
                 <span className="mt-2 block">
-                  jobs with <span className="text-emerald-300">N8N</span>
+                  <span className="text-emerald-300">n8n</span> & see live
+                  results
                 </span>
-                <span className="mt-2 block">See live results</span>
               </h1>
 
               <p className="max-w-xl text-white/90 text-xl leading-relaxed">
-                Quickly create deep web crawling and scraping jobs within n8n
-                and see live results in Bright Data via the secure Puppeteer
+                Quickly create powerful web crawling and scraping jobs within
+                n8n and see live results in Bright Data via the secure Puppeteer
                 library
               </p>
             </div>

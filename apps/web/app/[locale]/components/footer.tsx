@@ -11,7 +11,7 @@ export const Footer = () => (
             <div className="flex items-center gap-3">
               <div className="rounded-full bg-white/10 p-2">
                 <Image
-                  src="/ventriloquist-logo.svg"
+                  src="/assets/ventriloquist-logo.svg"
                   alt="Ventriloquist Logo"
                   width={40}
                   height={40}
