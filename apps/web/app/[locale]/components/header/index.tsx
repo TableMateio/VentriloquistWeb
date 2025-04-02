@@ -30,72 +30,77 @@ export const Header = ({ dictionary }: HeaderProps) => {
 
   const [isOpen, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 left-0 z-40 w-full border-white/10 border-b bg-transparent">
-      <div className="container relative mx-auto flex min-h-20 flex-row items-center gap-4 lg:grid lg:grid-cols-3">
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/ventriloquist-logo.svg"
-              alt="Ventriloquist Logo"
-              width={40}
-              height={40}
-              className="rounded-full"
-              unoptimized
-            />
-            <span className="whitespace-nowrap font-bold text-xl">
-              VENTRILOQUIST
-            </span>
-          </div>
+    <header className="sticky top-0 left-0 z-40 w-full bg-[#2E8B57]">
+      <div className="container mx-auto flex min-h-20 flex-row items-center justify-between px-4 py-4">
+        {/* Logo */}
+        <div className="flex items-center gap-3">
+          <Image
+            src="/ventriloquist-logo.svg"
+            alt="Ventriloquist Logo"
+            width={40}
+            height={40}
+            className="rounded-full"
+            unoptimized
+          />
+          <span className="whitespace-nowrap font-bold text-xl tracking-wide">
+            VENTRILOQUIST
+          </span>
         </div>
 
-        <div className="hidden flex-row items-center justify-center gap-8 lg:flex">
-          {navigationItems.map((item) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              className="text-white transition-colors hover:text-white/80"
-            >
-              {item.title}
-            </Link>
-          ))}
-        </div>
+        {/* Desktop Navigation */}
+        <div className="hidden items-center md:flex">
+          <nav className="mr-8 flex gap-12">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="font-medium text-lg text-white transition-colors hover:text-white/80"
+              >
+                {item.title}
+              </Link>
+            ))}
+          </nav>
 
-        <div className="flex w-full justify-end gap-4">
-          <Button className="bg-white text-[#2E8B57] hover:bg-white/90" asChild>
+          <Button
+            className="rounded-full bg-white px-6 py-2 font-medium text-[#2E8B57] text-base hover:bg-white/90"
+            asChild
+          >
             <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>Sign Up</Link>
           </Button>
         </div>
 
-        <div className="flex w-12 shrink items-end justify-end lg:hidden">
-          <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        {/* Mobile Menu */}
+        <div className="md:hidden">
+          <Button
+            variant="ghost"
+            onClick={() => setOpen(!isOpen)}
+            className="p-1"
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
+
           {isOpen && (
-            <div className="container absolute top-20 right-0 flex w-full flex-col gap-8 border-white/10 border-t bg-[#2E8B57] py-4 shadow-lg">
+            <div className="absolute top-20 right-0 left-0 flex w-full flex-col gap-6 border-white/10 border-t bg-[#2E8B57] p-6 shadow-lg">
               {navigationItems.map((item) => (
                 <div key={item.title}>
-                  <div className="flex flex-col gap-2">
-                    <Link
-                      href={item.href}
-                      className="flex items-center justify-between"
-                      target={
-                        item.href.startsWith('http') ? '_blank' : undefined
-                      }
-                      rel={
-                        item.href.startsWith('http')
-                          ? 'noopener noreferrer'
-                          : undefined
-                      }
-                    >
-                      <span className="text-lg">{item.title}</span>
-                      <MoveRight className="h-4 w-4 stroke-1 text-white/70" />
-                    </Link>
-                  </div>
+                  <Link
+                    href={item.href}
+                    className="flex items-center justify-between"
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={
+                      item.href.startsWith('http')
+                        ? 'noopener noreferrer'
+                        : undefined
+                    }
+                  >
+                    <span className="font-medium text-lg">{item.title}</span>
+                    <MoveRight className="h-4 w-4 stroke-1 text-white/70" />
+                  </Link>
                 </div>
               ))}
               <div className="mt-4 border-white/10 border-t pt-4">
                 <Button
-                  className="w-full bg-white text-[#2E8B57] hover:bg-white/90"
+                  className="w-full bg-white font-medium text-[#2E8B57] hover:bg-white/90"
                   asChild
                 >
                   <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>
