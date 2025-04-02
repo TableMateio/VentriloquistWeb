@@ -1,0 +1,168 @@
+{
+  "projectId": "prj_TlgrMjQY6Jlo5mRQgt0cfS0vF7U0",
+  "orgId": "team_1pIVHyTts2zTUrDYYQsICHdX",
+  "settings": {
+    "env": [
+      {
+        "key": "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY",
+        "value": "pk_test_aGlwLXBob2VuaXgtNTkuY2xlcmsuYWNjb3VudHMuZGV2JA",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "plain"
+      },
+      {
+        "key": "CLERK_SECRET_KEY",
+        "value": "sk_test_bzeBVhthVAHxLdXTYWer3C5DfGWzPv5ckQa2XMlGm8",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "secret"
+      },
+      {
+        "key": "NEXT_PUBLIC_CLERK_SIGN_IN_URL",
+        "value": "/sign-in",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "plain"
+      },
+      {
+        "key": "NEXT_PUBLIC_CLERK_SIGN_UP_URL",
+        "value": "/sign-up",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "plain"
+      },
+      {
+        "key": "NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL",
+        "value": "/dashboard",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "plain"
+      },
+      {
+        "key": "NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL",
+        "value": "/onboarding",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "plain"
+      },
+      {
+        "key": "NEXT_PUBLIC_POSTHOG_KEY",
+        "value": "phc_placeholder",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "plain"
+      },
+      {
+        "key": "NEXT_PUBLIC_POSTHOG_HOST",
+        "value": "https://app.posthog.com",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "plain"
+      },
+      {
+        "key": "RESEND_FROM",
+        "value": "noreply@example.com",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "secret"
+      },
+      {
+        "key": "RESEND_TOKEN",
+        "value": "re_placeholder",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "secret"
+      },
+      {
+        "key": "BASEHUB_TOKEN",
+        "value": "bshb_pk_placeholder",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "secret"
+      },
+      {
+        "key": "NEXT_PUBLIC_APP_URL",
+        "value": "http://localhost:3000",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "plain"
+      },
+      {
+        "key": "NEXT_PUBLIC_WEB_URL",
+        "value": "http://localhost:3001",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "plain"
+      },
+      {
+        "key": "DATABASE_URL",
+        "value": "postgres://postgres.dxlgwhnyexmexenyfddq:BX_k5Kd2%40%21%25%29M56@aws-0-us-east-1.pooler.supabase.com:6543/postgres",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "secret"
+      },
+      {
+        "key": "NEXT_PUBLIC_VERCEL_URL",
+        "value": "ventriloquist-web-tablemateios-projects.vercel.app",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "plain"
+      },
+      {
+        "key": "VERCEL_PROJECT_PRODUCTION_URL",
+        "value": "ventriloquist-web-tablemateios-projects.vercel.app",
+        "target": [
+          "production",
+          "preview",
+          "development"
+        ],
+        "type": "secret"
+      }
+    ]
+  }
+}
