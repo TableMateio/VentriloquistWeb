@@ -25,10 +25,6 @@ const Home = async ({ params }: HomeProps) => {
   return (
     <div className="w-full">
       <div className="container mx-auto">
-        <div className="mb-4 bg-red-600 p-4 text-center font-bold text-white text-xl">
-          USING THE IMPORTED HERO COMPONENT NOW -{' '}
-          {new Date().toLocaleTimeString()}
-        </div>
         <Hero dictionary={dictionary} />
       </div>
     </div>
