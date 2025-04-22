@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Path Tests</title>
+  <script src="/test-assets.js"></script>
+</head>
+<body>
+  <h1>Testing Image Paths</h1>
+  <p>This page tests various image paths to diagnose loading issues.</p>
+  
+  <div style="margin-top: 50px;">
+    <h2>Manual Image Tests:</h2>
+    
+    <div style="margin: 20px 0;">
+      <h3>1. Image from /assets/hero.png:</h3>
+      <img src="/assets/hero.png" alt="Hero from assets" style="max-width: 300px; border: 1px solid #ccc;">
+    </div>
+    
+    <div style="margin: 20px 0;">
+      <h3>2. Image from /hero.png (root):</h3>
+      <img src="/hero.png" alt="Hero from root" style="max-width: 300px; border: 1px solid #ccc;">
+    </div>
+    
+    <div style="margin: 20px 0;">
+      <h3>3. SVG from /assets:</h3>
+      <img src="/assets/ventriloquist-logo.svg" alt="Logo SVG from assets" style="max-width: 100px; border: 1px solid #ccc;">
+    </div>
+    
+    <div style="margin: 20px 0;">
+      <h3>4. SVG from root:</h3>
+      <img src="/ventriloquist-logo.svg" alt="Logo SVG from root" style="max-width: 100px; border: 1px solid #ccc;">
+    </div>
+  </div>
+</body>
+</html> 

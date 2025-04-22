@@ -9,9 +9,9 @@ export const Footer = () => (
         <div className="flex flex-col items-start justify-between gap-16 md:flex-row">
           <div className="flex flex-col gap-8">
             <div className="flex items-center gap-3">
-              <div className="rounded-full bg-white/10 p-2">
+              <div className="rounded-full bg-white p-2">
                 <Image
-                  src="/assets/ventriloquist-logo.svg"
+                  src="/assets/ventriloquist-logo-white.svg"
                   alt="Ventriloquist Logo"
                   width={40}
                   height={40}
