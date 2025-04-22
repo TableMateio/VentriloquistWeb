@@ -43,7 +43,7 @@ export const Header = ({ dictionary }: HeaderProps) => {
       <div className="container mx-auto flex min-h-20 flex-row items-center justify-between px-6 py-5 sm:px-8 lg:px-12">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="rounded-full bg-white/20 p-2 shadow-lg ring-2 ring-white/30">
+          <div className="rounded-full bg-white p-2 shadow-lg ring-2 ring-white/30">
             <img
               src="http://192.168.1.193:49894/assets/ventriloquist-logo-white.svg"
               alt="Ventriloquist Logo"
