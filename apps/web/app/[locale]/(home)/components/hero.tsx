@@ -85,7 +85,7 @@ export const Hero = async ({ dictionary }: HeroProps) => {
               >
                 <div className="absolute top-0 left-0 bg-red-500 text-white p-2 z-[100] rotate-45 translate-x-12 -translate-y-4">TEST 123</div>
                 <img 
-                  src="/assets/hero.png" 
+                  src="/direct-hero.png" 
                   alt="Ventriloquist Node Interface" 
                   className="w-full h-full object-contain bg-gradient-to-b from-[#1F5C3D]/5 to-[#2E8B57]/10 p-4"
                 />
