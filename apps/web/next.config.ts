@@ -7,10 +7,27 @@ import type { NextConfig } from 'next';
 
 let nextConfig: NextConfig = withToolbar(withLogging(config));
 
-nextConfig.images?.remotePatterns?.push({
-  protocol: 'https',
-  hostname: 'assets.basehub.com',
-});
+// Ensure public assets are properly included in the build
+nextConfig = {
+  ...nextConfig,
+  output: 'standalone',
+  assetPrefix: process.env.NODE_ENV === 'production' ? undefined : '',
+  publicRuntimeConfig: {
+    staticFolder: '/public',
+  },
+  images: {
+    ...(nextConfig.images || {}),
+    unoptimized: true,
+    domains: ['localhost', '192.168.1.193'],
+    remotePatterns: [
+      ...(nextConfig.images?.remotePatterns || []),
+      {
+        protocol: 'https',
+        hostname: 'assets.basehub.com',
+      }
+    ],
+  }
+};
 
 if (process.env.NODE_ENV === 'production') {
   const redirects: NextConfig['redirects'] = async () => [

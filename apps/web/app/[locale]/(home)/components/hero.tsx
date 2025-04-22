@@ -24,44 +24,34 @@ export const Hero = async ({ dictionary }: HeroProps) => {
             <div className="flex flex-col gap-8">
               <h1 className="font-bold text-7xl text-white leading-[1.1] tracking-tight">
                 <span className="block">
-                  <span className="font-light italic">deep</span> WEB
+                  <span className="font-light italic">Multi-step</span> 
                 </span>
                 <span className="mt-1 block">
-                  CRAWLING <span className="font-light italic">with</span>
-                </span>
-                <span className="mt-1 block">
-                  N8N <span className="font-light italic">made</span>
+                  Web Scraping <span className="font-light italic">without letting go</span>
                 </span>
                 <span className="mt-1 flex items-center">
-                  SIMPLE <MoveRight className="ml-4 h-12 w-12" />
+                  of the strings <MoveRight className="ml-4 h-12 w-12" />
                 </span>
               </h1>
 
               <p className="max-w-xl text-white/90 text-xl leading-relaxed">
-                Quickly create crawling and scraping jobs with n8n and see live
-                results in Bright Data via the secure Puppeteer library
+                Popups. 2FA. Conditional logic. Smart forms. AI-formatted extraction. All handled by n8n nodes and orchestrated by you.
               </p>
             </div>
 
-            <div className="flex flex-row gap-6">
-              <Button
-                size="lg"
-                className="rounded-full border-none bg-white px-10 py-6 font-medium text-[#2E8B57] text-lg hover:bg-white/90"
-                asChild
-              >
-                <Link href={env.NEXT_PUBLIC_APP_URL || '#'}>
-                  Get Started <MoveRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full border-2 border-white bg-transparent px-10 py-6 font-medium text-lg text-white hover:bg-white/10"
-                asChild
-              >
-                <Link href="/docs">Documentation</Link>
-              </Button>
+            <div className="flex flex-col gap-4 max-w-md">
+              <p className="text-white/90 text-lg font-medium">Be the first to know when we launch</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  className="flex-1 h-12 px-4 rounded-md bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent"
+                />
+                <button className="h-12 px-6 rounded-md bg-white text-[#2E8B57] font-medium hover:bg-white/90 transition-colors">
+                  Get Early Access
+                </button>
+              </div>
+              <p className="text-white/70 text-sm">Join our waitlist for exclusive early access</p>
             </div>
 
             <div className="flex flex-row flex-wrap gap-12">
@@ -69,46 +59,67 @@ export const Hero = async ({ dictionary }: HeroProps) => {
                 <div className="rounded-full bg-emerald-400/20 p-2">
                   <HeadphonesIcon className="h-5 w-5 text-emerald-300" />
                 </div>
-                <span className="text-base text-white/90">24/7 Support</span>
+                <span className="text-base text-white/90">Supports Local & Browserless</span>
               </div>
               <div className="flex flex-row items-center gap-3">
                 <div className="rounded-full bg-emerald-400/20 p-2">
                   <ShieldCheckIcon className="h-5 w-5 text-emerald-300" />
                 </div>
-                <span className="text-base text-white/90">Secure Library</span>
+                <span className="text-base text-white/90">Powered by Puppeteer</span>
               </div>
               <div className="flex flex-row items-center gap-3">
                 <div className="rounded-full bg-emerald-400/20 p-2">
                   <BoxIcon className="h-5 w-5 text-emerald-300" />
                 </div>
                 <span className="text-base text-white/90">
-                  Real-time Preview
+                  n8n Native
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Demo Terminal */}
+          {/* Right Side - Image */}
+          <div className="md:w-1/2 md:pl-8 flex justify-center">
+            <div className="relative w-[450px] h-[400px]">
+              <img 
+                src="http://192.168.1.193:49894/assets/hero.png" 
+                alt="Ventriloquist Node Interface" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+
+          {/* 
+            ORIGINAL NODE CODE - SAVED FOR LATER USE
+            
           <div className="md:w-1/2 md:pl-8">
-            <Card className="overflow-hidden rounded-2xl border-none bg-white/90 shadow-lg">
-              {/* Green Banner */}
-              <div className="bg-[#2E8B57] px-6 py-3">
-                <span className="font-semibold text-lg text-white">
+            <div className="relative">
+              <div className="-left-6 absolute top-[120px] h-px w-6 bg-gray-300" />
+              <div className="-left-8 -translate-y-1/2 absolute top-[120px] h-2 w-2 transform rounded-sm bg-gray-300" />
+            </div>
+
+            <Card className="!p-0 relative w-[380px] overflow-hidden rounded-2xl border-none bg-[#f6ffe7] shadow-lg">
+              <div className="-right-4 absolute top-[140px] h-px w-4 bg-[#43af65]/80" />
+              <div className="-right-6 -translate-y-1/2 absolute top-[140px] h-2 w-2 transform rounded-sm bg-[#43af65]/80" />
+              <div className="-right-4 absolute top-[280px] h-px w-4 bg-[#43af65]/80" />
+              <div className="-right-6 -translate-y-1/2 absolute top-[280px] h-2 w-2 transform rounded-sm bg-[#43af65]/80" />
+
+              <div className="rounded-t-2xl bg-[#43af65] px-4 py-2">
+                <span className="font-medium text-[#f6ffe7] text-sm">
                   Action Node
                 </span>
               </div>
 
-              <div className="flex flex-col gap-4 p-6">
-                {/* Condition Section */}
-                <div className="flex flex-col gap-2">
-                  <span className="font-medium text-[#2E8B57] text-sm">
-                    Condition
-                  </span>
-                  <div className="rounded-lg border border-[#2E8B57]/20 bg-white p-3 shadow-sm">
+              <div className="flex flex-col gap-3 p-4">
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-[#43af65] text-sm">Condition</span>
+                  <div className="rounded-lg border border-[#43af65]/20 bg-[#f6ffe7] p-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-[#2E8B57]">Element exists</span>
+                      <span className="text-[#43af65] text-sm">
+                        Element exists
+                      </span>
                       <svg
-                        className="h-5 w-5 text-[#2E8B57]/60"
+                        className="h-3.5 w-3.5 text-[#43af65]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -125,29 +136,28 @@ export const Hero = async ({ dictionary }: HeroProps) => {
                   </div>
                 </div>
 
-                {/* Search Input */}
-                <div className="flex items-center gap-3">
-                  <div className="flex h-5 w-5 items-center justify-center rounded border border-[#2E8B57]/20">
-                    <div className="h-3 w-3 rounded-sm bg-[#2E8B57]" />
+                <div className="flex items-center gap-1.5">
+                  <div className="flex h-3.5 w-3.5 items-center justify-center rounded-sm border border-[#43af65]">
+                    <div className="h-2 w-2 rounded-sm bg-[#43af65]" />
                   </div>
-                  <div className="flex-1 rounded-lg border border-[#2E8B57]/20 bg-white p-3 font-mono text-[#2E8B57]/80 text-sm">
+                  <div className="flex-1 rounded-lg border border-[#43af65]/20 bg-[#f6ffe7] p-2 font-mono text-[#43af65] text-sm">
                     #contactsList
                   </div>
                 </div>
 
-                {/* Action Label */}
-                <div className="mt-2">
-                  <span className="font-medium text-[#2E8B57] text-sm">
+                <div className="border-[#43af65]/20 border-t" />
+
+                <div>
+                  <span className="font-medium text-[#43af65] text-sm">
                     Action
                   </span>
                 </div>
 
-                {/* Fill Form Action */}
-                <div className="rounded-lg border border-[#2E8B57]/20 bg-white p-3 shadow-sm">
+                <div className="rounded-lg border border-[#43af65]/20 bg-[#f6ffe7] p-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-[#2E8B57]">Fill Form</span>
+                    <span className="text-[#43af65] text-sm">Fill Form</span>
                     <svg
-                      className="h-5 w-5 text-[#2E8B57]/60"
+                      className="h-3.5 w-3.5 text-[#43af65]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -163,62 +173,52 @@ export const Hero = async ({ dictionary }: HeroProps) => {
                   </div>
                 </div>
 
-                {/* Form Fields */}
-                <div className="flex flex-col gap-3">
-                  {/* Element Field */}
+                <div className="flex flex-col gap-2">
                   <div className="flex flex-col gap-1">
-                    <span className="font-medium text-[#2E8B57]/70 text-sm">
-                      Element
-                    </span>
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-5 w-5 items-center justify-center rounded border border-[#2E8B57]/20">
-                        <div className="h-3 w-3 rounded-sm bg-[#2E8B57]" />
+                    <span className="text-[#43af65] text-sm">Element</span>
+                    <div className="flex items-center gap-1.5">
+                      <div className="flex h-3.5 w-3.5 items-center justify-center rounded-sm border border-[#43af65]">
+                        <div className="h-2 w-2 rounded-sm bg-[#43af65]" />
                       </div>
-                      <div className="flex-1 rounded-lg border border-[#2E8B57]/20 bg-white p-3 font-mono text-[#2E8B57]/80 text-sm">
+                      <div className="flex-1 rounded-lg border border-[#43af65]/20 bg-[#f6ffe7] p-2 font-mono text-[#43af65] text-sm">
                         #search
                       </div>
                     </div>
                   </div>
 
-                  {/* Value Field */}
                   <div className="flex flex-col gap-1">
-                    <span className="font-medium text-[#2E8B57]/70 text-sm">
-                      Value
-                    </span>
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-5 w-5 items-center justify-center rounded border border-[#2E8B57]/20">
-                        <div className="h-3 w-3 rounded-sm bg-[#2E8B57]" />
+                    <span className="text-[#43af65] text-sm">Value</span>
+                    <div className="flex items-center gap-1.5">
+                      <div className="flex h-3.5 w-3.5 items-center justify-center rounded-sm border border-[#43af65]">
+                        <div className="h-2 w-2 rounded-sm bg-[#43af65]" />
                       </div>
-                      <div className="flex-1 rounded-lg border border-[#2E8B57]/20 bg-white p-3 font-mono text-[#2E8B57]/80 text-sm">
+                      <div className="flex-1 rounded-lg border border-[#43af65]/20 bg-[#f6ffe7] p-2 font-mono text-[#43af65] text-sm">
                         &#123;&#123; $json.fullName &#125;&#125;
                       </div>
                     </div>
                   </div>
 
-                  {/* Submit Checkbox */}
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-5 w-5 items-center justify-center rounded border border-[#2E8B57]/20">
-                      <div className="h-3 w-3 rounded-sm bg-[#2E8B57]" />
+                  <div className="flex items-center gap-1.5">
+                    <div className="flex h-3.5 w-3.5 items-center justify-center rounded-sm border border-[#43af65]">
+                      <div className="h-2 w-2 rounded-sm bg-[#43af65]" />
                     </div>
-                    <span className="text-[#2E8B57]/80">
+                    <span className="text-[#43af65] text-sm">
                       Submit form after fill
                     </span>
                   </div>
                 </div>
 
-                {/* Divider */}
-                <div className="border-[#2E8B57]/10 border-t" />
+                <div className="border-[#43af65]/20 border-t" />
 
-                {/* Backup Action Section */}
-                <div className="flex flex-col gap-2">
-                  <span className="font-medium text-[#2E8B57]/70 text-sm">
-                    Backup action
-                  </span>
-                  <div className="rounded-lg border border-[#2E8B57]/20 bg-white p-3 shadow-sm">
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-[#43af65] text-sm">Backup action</span>
+                  <div className="rounded-lg border border-[#43af65]/20 bg-[#f6ffe7] p-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-[#2E8B57]">Click element</span>
+                      <span className="text-[#43af65] text-sm">
+                        Click element
+                      </span>
                       <svg
-                        className="h-5 w-5 text-[#2E8B57]/60"
+                        className="h-3.5 w-3.5 text-[#43af65]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -235,18 +235,18 @@ export const Hero = async ({ dictionary }: HeroProps) => {
                   </div>
                 </div>
 
-                {/* Browse Input */}
-                <div className="flex items-center gap-3">
-                  <div className="flex h-5 w-5 items-center justify-center rounded border border-[#2E8B57]/20">
-                    <div className="h-3 w-3 rounded-sm bg-[#2E8B57]" />
+                <div className="flex items-center gap-1.5">
+                  <div className="flex h-3.5 w-3.5 items-center justify-center rounded-sm border border-[#43af65]">
+                    <div className="h-2 w-2 rounded-sm bg-[#43af65]" />
                   </div>
-                  <div className="flex-1 rounded-lg border border-[#2E8B57]/20 bg-white p-3 font-mono text-[#2E8B57]/80 text-sm">
+                  <div className="flex-1 rounded-lg border border-[#43af65]/20 bg-[#f6ffe7] p-2 font-mono text-[#43af65] text-sm">
                     &#123;&#123; $json.browse &#125;&#125;
                   </div>
                 </div>
               </div>
             </Card>
           </div>
+          */}
         </div>
       </div>
     </div>

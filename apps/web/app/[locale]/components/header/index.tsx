@@ -8,7 +8,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import type { Dictionary } from '@repo/internationalization';
-import Image from 'next/image';
 
 type HeaderProps = {
   dictionary: Dictionary;
@@ -45,14 +44,12 @@ export const Header = ({ dictionary }: HeaderProps) => {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <div className="rounded-full bg-white/10 p-2">
-            <Image
-              src="/assets/ventriloquist-logo.svg"
+            <img
+              src="http://192.168.1.193:49894/assets/ventriloquist-logo.svg"
               alt="Ventriloquist Logo"
-              width={40}
-              height={40}
+              width="40"
+              height="40"
               className="rounded-full"
-              unoptimized
-              priority
             />
           </div>
           <span className="font-semibold text-white text-xl tracking-wide">
