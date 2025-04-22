@@ -80,7 +80,7 @@ export const Hero = async ({ dictionary }: HeroProps) => {
 
           {/* Right Side - Image */}
           <div className="md:w-1/2 md:pl-8 flex justify-center">
-            <div className="relative w-[600px] h-[550px] transform perspective-1000 -mt-12">
+            <div className="relative w-[550px] h-[500px] transform perspective-1000 -mt-8">
               <div className="absolute inset-0 bg-white/10 rounded-xl shadow-2xl transform -rotate-3 scale-110"></div>
               <div 
                 className="relative w-full h-full rounded-xl overflow-hidden border-8 border-white/20 shadow-[0_15px_30px_rgba(0,0,0,0.4)] transform rotate-3 transition-transform hover:rotate-0 duration-500"
