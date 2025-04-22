@@ -23,15 +23,9 @@ export const Hero = async ({ dictionary }: HeroProps) => {
           <div className="flex flex-col gap-12 md:w-1/2">
             <div className="flex flex-col gap-8">
               <h1 className="font-bold text-7xl text-white leading-[1.1] tracking-tight">
-                <span className="block">
-                  <span className="font-light italic">Multi-step</span> 
-                </span>
-                <span className="mt-1 block">
-                  Web Scraping <span className="font-light italic">without letting go</span>
-                </span>
-                <span className="mt-1 flex items-center">
-                  of the strings <MoveRight className="ml-4 h-12 w-12" />
-                </span>
+                  <span className="font-light italic">Multi-step </span> 
+                  Web Scraping <span className="font-light italic">without letting go </span>
+                  of the strings
               </h1>
 
               <p className="max-w-xl text-white/90 text-xl leading-relaxed">
@@ -89,8 +83,9 @@ export const Hero = async ({ dictionary }: HeroProps) => {
                   transform: 'perspective(1000px) rotateY(-8deg) rotateX(3deg)'
                 }}
               >
+                <div className="absolute top-0 left-0 bg-red-500 text-white p-2 z-50 rotate-45 translate-x-12 -translate-y-4">TEST 123</div>
                 <img 
-                  src="http://192.168.1.193:49894/assets/hero.png" 
+                  src="https://raw.githubusercontent.com/TableMateio/VentriloquistWeb/main/apps/web/public/assets/hero.png" 
                   alt="Ventriloquist Node Interface" 
                   className="w-full h-full object-contain bg-gradient-to-b from-[#1F5C3D]/5 to-[#2E8B57]/10 p-4"
                 />
