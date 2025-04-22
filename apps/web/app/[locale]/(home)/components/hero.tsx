@@ -54,21 +54,21 @@ export const Hero = async ({ dictionary }: HeroProps) => {
               <p className="text-white/70 text-sm">Join our waitlist for exclusive early access</p>
             </div>
 
-            <div className="flex flex-row flex-wrap gap-12">
-              <div className="flex flex-row items-center gap-3">
-                <div className="rounded-full bg-emerald-400/20 p-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mt-6 w-full max-w-3xl">
+              <div className="flex flex-row items-center gap-3 bg-white/5 rounded-lg p-3 transition-all hover:bg-white/10">
+                <div className="rounded-full bg-emerald-400/20 p-2 shrink-0">
                   <HeadphonesIcon className="h-5 w-5 text-emerald-300" />
                 </div>
                 <span className="text-base text-white/90">Supports Local & Browserless</span>
               </div>
-              <div className="flex flex-row items-center gap-3">
-                <div className="rounded-full bg-emerald-400/20 p-2">
+              <div className="flex flex-row items-center gap-3 bg-white/5 rounded-lg p-3 transition-all hover:bg-white/10">
+                <div className="rounded-full bg-emerald-400/20 p-2 shrink-0">
                   <ShieldCheckIcon className="h-5 w-5 text-emerald-300" />
                 </div>
                 <span className="text-base text-white/90">Powered by Puppeteer</span>
               </div>
-              <div className="flex flex-row items-center gap-3">
-                <div className="rounded-full bg-emerald-400/20 p-2">
+              <div className="flex flex-row items-center gap-3 bg-white/5 rounded-lg p-3 transition-all hover:bg-white/10">
+                <div className="rounded-full bg-emerald-400/20 p-2 shrink-0">
                   <BoxIcon className="h-5 w-5 text-emerald-300" />
                 </div>
                 <span className="text-base text-white/90">
@@ -80,12 +80,21 @@ export const Hero = async ({ dictionary }: HeroProps) => {
 
           {/* Right Side - Image */}
           <div className="md:w-1/2 md:pl-8 flex justify-center">
-            <div className="relative w-[450px] h-[400px]">
-              <img 
-                src="http://192.168.1.193:49894/assets/hero.png" 
-                alt="Ventriloquist Node Interface" 
-                className="w-full h-full object-contain"
-              />
+            <div className="relative w-[500px] h-[450px] transform perspective-1000">
+              <div className="absolute inset-0 bg-white/10 rounded-xl shadow-2xl transform -rotate-2 scale-105"></div>
+              <div 
+                className="relative w-full h-full rounded-xl overflow-hidden border-4 border-white/20 shadow-[0_10px_20px_rgba(0,0,0,0.3)] transform rotate-2 transition-transform hover:rotate-0 duration-500"
+                style={{ 
+                  transformStyle: 'preserve-3d',
+                  transform: 'perspective(1000px) rotateY(-5deg) rotateX(2deg)'
+                }}
+              >
+                <img 
+                  src="http://192.168.1.193:49894/assets/hero.png" 
+                  alt="Ventriloquist Node Interface" 
+                  className="w-full h-full object-contain bg-gradient-to-b from-[#1F5C3D]/5 to-[#2E8B57]/10 p-2"
+                />
+              </div>
             </div>
           </div>
 
