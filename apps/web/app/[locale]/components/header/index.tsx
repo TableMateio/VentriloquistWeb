@@ -45,7 +45,7 @@ export const Header = ({ dictionary }: HeaderProps) => {
         <div className="flex items-center gap-3">
           <div className="rounded-full bg-white p-2 shadow-lg ring-2 ring-white/30">
             <img
-              src="https://raw.githubusercontent.com/TableMateio/VentriloquistWeb/main/apps/web/public/assets/ventriloquist-logo-white.svg"
+              src="/assets/ventriloquist-logo-white.svg"
               alt="Ventriloquist Logo"
               width="48"
               height="48"

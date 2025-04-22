@@ -74,7 +74,7 @@ export const Hero = async ({ dictionary }: HeroProps) => {
 
           {/* Right Side - Image */}
           <div className="md:w-1/2 md:pl-8 flex justify-center">
-            <div className="relative w-[550px] h-[500px] transform perspective-1000 -mt-8">
+            <div className="relative w-[600px] h-[550px] transform perspective-1000 -mt-12">
               <div className="absolute inset-0 bg-white/10 rounded-xl shadow-2xl transform -rotate-3 scale-110"></div>
               <div 
                 className="relative w-full h-full rounded-xl overflow-hidden border-8 border-white/20 shadow-[0_15px_30px_rgba(0,0,0,0.4)] transform rotate-3 transition-transform hover:rotate-0 duration-500"
@@ -83,9 +83,9 @@ export const Hero = async ({ dictionary }: HeroProps) => {
                   transform: 'perspective(1000px) rotateY(-8deg) rotateX(3deg)'
                 }}
               >
-                <div className="absolute top-0 left-0 bg-red-500 text-white p-2 z-50 rotate-45 translate-x-12 -translate-y-4">TEST 123</div>
+                <div className="absolute top-0 left-0 bg-red-500 text-white p-2 z-[100] rotate-45 translate-x-12 -translate-y-4">TEST 123</div>
                 <img 
-                  src="https://raw.githubusercontent.com/TableMateio/VentriloquistWeb/main/apps/web/public/assets/hero.png" 
+                  src="/assets/hero.png" 
                   alt="Ventriloquist Node Interface" 
                   className="w-full h-full object-contain bg-gradient-to-b from-[#1F5C3D]/5 to-[#2E8B57]/10 p-4"
                 />
